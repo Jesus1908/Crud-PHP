@@ -42,5 +42,15 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
 
       break;
 
+    case 'DELETE':
+      header('Content-Type: application/json; charset=utf-8');
+      $url = $_SERVER['REQUEST_URI'];
+      $arrayURL = explode('/', $url);
+      $id = end($arrayURL);
+
+      $filasAfectadas = $curso->delete(['id' => $id]);
+      echo json_encode(["filas" => $filasAfectadas]);
+      break;
+
   }
 }

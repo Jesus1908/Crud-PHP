@@ -51,4 +51,18 @@ class Curso {
     );
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  public function delete($params = []): int{
+
+    //Tipos de eliminación: FÍSICA (DELETE) - LÓGICA (UPDATE)
+    $sql = "DELETE FROM cursos WHERE id = ?";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute(
+      array(
+        $params["id"],
+      )
+    );
+
+    return $stmt->rowCount();
+  }
 }
