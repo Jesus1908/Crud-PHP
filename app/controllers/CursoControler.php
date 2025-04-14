@@ -7,6 +7,20 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
 
   switch ($_SERVER['REQUEST_METHOD']) {
 
+
+
+    case 'GET':
+      //sleep(5);
+      header('Content-Type: application/json; charset=utf-8');
+  
+      if ($_GET['task'] == 'getAll'){
+        echo json_encode($curso->getAll());
+        }else if ($_GET['task'] == 'getById'){
+          echo json_encode($curso->getById($_GET['id']));
+        }
+      break;
+
+
     case 'POST':
       $input = file_get_contents('php://input');
       $dataJSON = json_decode($input, true);
