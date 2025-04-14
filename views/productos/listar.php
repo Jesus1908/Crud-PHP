@@ -96,7 +96,7 @@
           const id = enlace.getAttribute('data-id');
           
           if (confirm("¿Está seguro de eliminar el registro?")){
-            fetch(`../../app/controllers/CursoController.php/${id}`, { method: 'DELETE' })
+            fetch(`../../app/controllers/CursoControler.php/${id}`, { method: 'DELETE' })
               .then(response => { return response.json() })
               .then(datos => { 
                 if (datos.filas > 0){
