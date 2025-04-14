@@ -11,6 +11,19 @@ class Curso {
   }
 
   /**
+   * @return array
+   */
+  public function getAll(): array{
+    $sql = "SELECT * FROM vista_cursos_todos";
+    
+    $stmt = $this->conexion->prepare($sql); //1. Preparación (seguridad)
+    $stmt->execute(); //2. Ejecución
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC); //3. Retorno FETCH_ASSOC (arreglo asociativo)
+  }
+
+
+  /**
    * Registra un cyrso nuevo a mi bd cursos
    * @param array 
    * @return int Cantidad de filas afectadas
@@ -30,4 +43,12 @@ class Curso {
     return $stmt->rowCount();
   }
 
+  public function getById($id): array{
+    $sql = "SELECT * FROM cursos WHERE id = ?";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute(
+      array($id)
+    );
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
 }
