@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos</title>
+  <title>Registar Cursos</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -49,7 +49,7 @@
             </div>
             <div class="col">
               <div class="form-floating mb-2">
-                <input type="number" value="6" min="0" step="10" class="form-control text-end" id="precio" placeholder="Precio" required>
+                <input  type="number" step="any" value="0" min="0" step="10" class="form-control text-end" id="precio" placeholder="Precio" required>
                 <label for="precio">Precio</label>
               </div>
             </div>

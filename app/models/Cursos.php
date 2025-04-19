@@ -65,4 +65,28 @@ class Curso {
 
     return $stmt->rowCount();
   }
+
+  public function update($params = []): int {
+    $sql = "UPDATE cursos SET
+              idcategoria = ?,
+              titulo = ?,
+              duracion = ?,
+              nivel = ?,
+              precio = ?,
+              fechainicio = ?
+            WHERE id = ?";
+  
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute([
+      $params["idcategoria"],
+      $params["titulo"],
+      $params["duracion"],
+      $params["nivel"],
+      $params["precio"],
+      $params["fechainicio"],
+      $params["idcurso"]
+    ]);
+  
+    return $stmt->rowCount();
+  }  
 }

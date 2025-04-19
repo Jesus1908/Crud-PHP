@@ -25,7 +25,6 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
       $input = file_get_contents('php://input');
       $dataJSON = json_decode($input, true);
 
-
       $registro = [
         'idcategoria'   => $dataJSON['idcategoria'],
         'titulo'        => $dataJSON['titulo'],
@@ -52,5 +51,28 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
       echo json_encode(["filas" => $filasAfectadas]);
       break;
 
+    case 'PUT':
+      $input = file_get_contents('php://input');
+      $dataJSON = json_decode($input, true);
+  
+      if ($dataJSON && isset($dataJSON['idcurso'])) {
+        $registro = [
+          'idcurso'       => $dataJSON['idcurso'],
+          'idcategoria'   => $dataJSON['idcategoria'],
+          'titulo'        => $dataJSON['titulo'],
+          'duracion'      => $dataJSON['duracion'],
+          'nivel'         => $dataJSON['nivel'],
+          'precio'        => $dataJSON['precio'],
+          'fechainicio'   => $dataJSON['fechainicio']
+          ];
+  
+         $filasAfectadas = $curso->update($registro);
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(["filas" => $filasAfectadas]);
+        } else {
+          http_response_code(400);
+          echo json_encode(["error" => "Datos incompletos para actualizar"]);
+        }
+        break;
   }
 }
