@@ -2,7 +2,7 @@
 
 class Database {
 
-  private static $host = "localhost";
+  private static $host = "127.0.0.1";
   private static $dbname = "cursos"; 
   private static $username = "root";
   private static $password = ""; 

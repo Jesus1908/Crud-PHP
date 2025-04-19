@@ -55,7 +55,6 @@
     const tabla = document.querySelector("#tabla-cursos tbody");
 
     function obtenerDatos(){
-      //fetch(RUTA_CONTROLADOR).then(JSON).then(DATA).catch(ERRORES)
       fetch(`../../app/controllers/CursoControler.php?task=getAll`, {
         method: 'GET'
       })
