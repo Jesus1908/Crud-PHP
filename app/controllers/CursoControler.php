@@ -10,15 +10,21 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
 
 
     case 'GET':
-      //sleep(5);
       header('Content-Type: application/json; charset=utf-8');
   
-      if ($_GET['task'] == 'getAll'){
-        echo json_encode($curso->getAll());
-        }else if ($_GET['task'] == 'getById'){
+      if ($_GET['task'] == 'getAll') {
+          echo json_encode($curso->getAll());
+  
+      } else if ($_GET['task'] == 'getById') {
           echo json_encode($curso->getById($_GET['id']));
-        }
+  
+      } else if ($_GET['task'] == 'getTotal') {
+          $total = $curso->getTotal();
+          echo json_encode(['total' => $total]);
+      }
       break;
+  
+    
 
 
     case 'POST':
@@ -28,7 +34,7 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
       $registro = [
         'idcategoria'   => $dataJSON['idcategoria'],
         'titulo'        => $dataJSON['titulo'],
-        'duracion'      => $dataJSON['duracion'],  //formato HH:MM:SS
+        'duracion'      => $dataJSON['duracion'], 
         'nivel'         => $dataJSON['nivel'],
         'precio'        => $dataJSON['precio'],
         'fechainicio'   => $dataJSON['fechainicio']
