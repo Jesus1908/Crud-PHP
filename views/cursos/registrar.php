@@ -11,67 +11,73 @@
 </head>
 <body>
   
-  <div class="container">
+<div class="container">
 
-    <form action="" autocomplete="off" id="formulario-registro">
-      <div class="card mt-3">
-        <div class="card-header bg-primary text-light">Registro de Cursos</div>
-        <div class="card-body">
-          
-          <div class="form-floating mb-2">
-            <select name="categorias" id="categorias" class="form-select" required>
-              <option value="">Seleccione</option>
-              <option value="1">Matematica</option>
-              <option value="2">Literatura</option>
-              <option value="3">Informatica</option>
-            </select>
-            <label for="categorias">Categorias</label>
-          </div>
+  <form action="" autocomplete="off" id="formulario-registro">
+    <div class="card mt-3">
+      <div class="card-header bg-primary text-light">Registro de Cursos</div>
+      <div class="card-body">
 
-          <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="titulo" placeholder="Titulo" required>
-            <label for="titulo">Titulo</label>
-          </div>
+        <div class="form-floating mb-2">
+          <select name="categorias" id="categorias" class="form-select" required>
+            <option value="">Seleccione</option>
+            <option value="1">Matematica</option>
+            <option value="2">Literatura</option>
+            <option value="3">Informatica</option>
+          </select>
+          <label for="categorias">Categorias</label>
+        </div>
 
-          <div class="form-floating mb-2">
-            <input type="time" class="form-control" id="duracion" placeholder="Duracion" required>
-            <label for="duracion">Duracion</label>
-          </div>
+        <div class="form-floating mb-2">
+          <input type="text" class="form-control" id="titulo" placeholder="Titulo" required>
+          <label for="titulo">Titulo</label>
+        </div>
 
-          <!-- Compartir fila -->
-          <div class="row g-2">
+        <div class="form-floating mb-2">
+          <input type="time" class="form-control" id="duracion" placeholder="Duracion" required>
+          <label for="duracion">Duracion</label>
+        </div>
 
-            <div class="col">
-              <div class="form-floating mb-2">
-                <input type="text" class="form-control text-end" id="nivel" placeholder="Nivel" required>
-                <label for="Nivel">Nivel</label>
-              </div>
+        <!-- Compartir fila -->
+        <div class="row g-2">
+
+          <div class="col">
+            <div class="form-floating mb-2">
+              <input type="text" class="form-control text-end" id="nivel" placeholder="Nivel" required>
+              <label for="Nivel">Nivel</label>
             </div>
-            <div class="col">
-              <div class="form-floating mb-2">
-                <input  type="number" step="any" value="0" min="0" step="10" class="form-control text-end" id="precio" placeholder="Precio" required>
-                <label for="precio">Precio</label>
-              </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-2">
+              <input type="number" step="any" value="0" min="0" step="10" class="form-control text-end" id="precio" placeholder="Precio" required>
+              <label for="precio">Precio</label>
             </div>
-
           </div>
-          <!-- Fin compartir fila -->
-
-          <div class="form-floating">
-            <input type="date" class="form-control" id="fechainicio" name="fechainicio" required>
-            <label for="fechainicio">Fecha Inicio</label>
-          </div>
-
 
         </div>
-        <div class="card-footer text-end">
-          <button class="btn btn-sm btn-primary" type="submit">Guardar</button>
-          <button class="btn btn-sm btn-secondary" type="reset">Cancelar</button>
-        </div>
-      </div> <!-- ./card -->
-    </form>
+        <!-- Fin compartir fila -->
 
-  </div> <!-- ./container -->
+        <div class="form-floating">
+          <input type="date" class="form-control" id="fechainicio" name="fechainicio" required>
+          <label for="fechainicio">Fecha Inicio</label>
+        </div>
+
+      </div>
+      <div class="card-footer text-end">
+        <button class="btn btn-sm btn-primary" type="submit">Guardar</button>
+        <button class="btn btn-sm btn-secondary" type="reset">Cancelar</button>
+      </div>
+    </div> <!-- ./card -->
+
+    <!-- Botón volver -->
+    <div class="text-center mt-4">
+      <a href="../../public/index.html" class="btn btn-outline-primary">Volver al menú principal</a>
+    </div>
+
+  </form>
+
+</div>
+ <!-- ./container -->
 
   <script>
     const formulario = document.querySelector("#formulario-registro");

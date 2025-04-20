@@ -13,16 +13,15 @@
     <div class="card mt-3">
       <div class="card-header bg-primary text-light">Actualizar curso</div>
       <div class="card-body">
-
-      <div class="form-floating mb-2">
-            <select name="idcategoria" id="idcategoria" class="form-select" required>
-              <option value="">Seleccione</option>
-              <option value="1">Matematica</option>
-              <option value="2">Literatura</option>
-              <option value="3">Informatica</option>
-            </select>
-            <label for="idcategoria">Categorias</label>
-          </div>
+        <div class="form-floating mb-2">
+          <select name="idcategoria" id="idcategoria" class="form-select" required>
+            <option value="">Seleccione</option>
+            <option value="1">Matematica</option>
+            <option value="2">Literatura</option>
+            <option value="3">Informatica</option>
+          </select>
+          <label for="idcategoria">Categorias</label>
+        </div>
 
         <div class="form-floating mb-2">
           <input type="text" class="form-control" id="titulo" placeholder="Título del curso" required>
@@ -40,7 +39,7 @@
         </div>
 
         <div class="form-floating mb-2">
-          <input  type="number" step="any" class="form-control text-end" id="precio" placeholder="Precio" required>
+          <input type="number" step="any" class="form-control text-end" id="precio" placeholder="Precio" required>
           <label for="precio">Precio</label>
         </div>
 
@@ -48,7 +47,6 @@
           <input type="date" class="form-control" id="fechainicio" required>
           <label for="fechainicio">Fecha de inicio</label>
         </div>
-
       </div>
       <div class="card-footer text-end">
         <button class="btn btn-sm btn-primary" type="submit">Actualizar</button>
@@ -56,6 +54,12 @@
       </div>
     </div>
   </form>
+
+  <!-- Botón adicional centrado y separado -->
+  <div class="text-center mt-4">
+    <a href="../cursos/listar.php" class="btn btn-info px-4 py-2">Volver a la lista de cursos</a>
+    <a href="../../public/index.html" class="btn btn-success px-4 py-2">Volver al menú principal</a>
+  </div>
 </div>
 
 <script>

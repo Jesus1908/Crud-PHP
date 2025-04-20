@@ -14,40 +14,45 @@
 </head>
 <body>
   
-  <div class="container">
-    <div class="card mt-3">
-      <div class="card-header">Listado de cursos</div>
-      <div class="card-body">
-        <table class="table table-striped table-sm" id="tabla-cursos">
-          <colgroup>
-            <col style="width: 4%;">  <!-- ID -->
-            <col style="width: 18%;"> <!-- Categoria -->
-            <col style="width: 17%;"> <!-- Titulo -->
-            <col style="width: 17%;"> <!-- Duracion -->
-            <col style="width: 12%;"> <!-- Nivel -->
-            <col style="width: 12%;"> <!-- Precio -->
-            <col style="width: 10%;"> <!--Fecha de inicio -->
-            <col style="width: 10%;"> <!-- Acciones -->
-          </colgroup>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Categoria</th>
-              <th>Titulo</th>
-              <th>Duración</th>
-              <th>Nivel</th>
-              <th>Precio</th>
-              <th>Inicio</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Contenido de forma dinámica -->
-          </tbody>
-        </table>
-      </div>
+<div class="container">
+  <div class="card mt-3">
+    <div class="card-header">Listado de cursos</div>
+    <div class="card-body">
+      <table class="table table-striped table-sm" id="tabla-cursos">
+        <colgroup>
+          <col style="width: 4%;">  <!-- ID -->
+          <col style="width: 18%;"> <!-- Categoria -->
+          <col style="width: 17%;"> <!-- Titulo -->
+          <col style="width: 17%;"> <!-- Duracion -->
+          <col style="width: 12%;"> <!-- Nivel -->
+          <col style="width: 12%;"> <!-- Precio -->
+          <col style="width: 10%;"> <!--Fecha de inicio -->
+          <col style="width: 10%;"> <!-- Acciones -->
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Titulo</th>
+            <th>Duración</th>
+            <th>Nivel</th>
+            <th>Precio</th>
+            <th>Inicio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
   </div>
+
+  <!-- Botón centrado con estilo y separado -->
+  <div class="text-center mt-4">
+    <a href="../../public/index.html" class="btn btn-success px-4 py-2">Volver al menú principal</a>
+  </div>
+</div>
+
 
   <script>
 
