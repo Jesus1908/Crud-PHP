@@ -52,6 +52,15 @@ class Curso {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function getTotal(){
+    $sql = "SELECT COUNT(*) AS total FROM cursos";
+    $stm = $this->conexion->prepare($sql);
+    $stm->execute();
+    $fila = $stm->fetch(PDO::FETCH_ASSOC);
+    return $fila['total'];
+  }
+  
+
   public function delete($params = []): int{
 
     //Tipos de eliminación: FÍSICA (DELETE) - LÓGICA (UPDATE)
