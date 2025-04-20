@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-s
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Total de Cursos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <aside>
-        <header class="sidebar">
-            <a href="#" class="header-logo">
-                <img src="img01.png" alt="CodingNepal">
-            </a>
-            <button>
-                <span class="material-symbols-rounded">keyboard_arrow_left</span>
-            </button>
-        </header>
-        
-        <nav class="sidebar-nav">
-            <ul class="nav-list primary-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <span class="material-symbols-rounded">book</span>
-                        <span class="nav-label">Agregar nuevo curso</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <nav class="sidebar-nav">
-            <ul class="nav-list primary-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <span class="material-symbols-rounded">database</span>
-                        <span class="nav-label">Lista de cursos</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+  <h1 class="text-white bg-success p-3 rounded text-center">CURSOS</h1>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/descarga.png" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">Cursos registrados:</h5>
+            <p class="card-text fs-1 fw-bold" id="total-cursos">0</p>
+          </div>
+        </div>
+        <a href="../views/cursos/listar.php" class="btn btn-info d-block mx-auto mt-3">Lista de cursos</a>
+        <a href="../views/cursos/registrar.php" class="btn btn-success d-block mx-auto mt-3">Agregar curso</a>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    fetch('../app/controllers/CursoControler.php?task=getTotal')
+      .then(response => response.json()) 
+      .then(data => {
+        if (data && data.total !== undefined) {
+          document.getElementById('total-cursos').textContent = data.total;
+        } else {
+          console.error('Error: el campo total no está presente en la respuesta.');
+        }
+      })
+      .catch(error => {
+        console.error('Error al obtener el total de cursos:', error);
+      });
+  </script>
 </body>
 </html>
